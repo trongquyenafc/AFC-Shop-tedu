@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace TeduShop.Model.Models
 {
     [Table("SupportOnlines")]
-    class SupportOnline
+   public  class SupportOnline
     {
 
 
