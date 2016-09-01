@@ -11,7 +11,7 @@ namespace TedShop.Data.Repositories
     public interface IMenuRepository : IRepository<Menu>
     {
     }
-    public  class MenuRepository: RepositoryBase<Menu>
+    public  class MenuRepository: RepositoryBase<Menu>, IMenuRepository
     {
 
 

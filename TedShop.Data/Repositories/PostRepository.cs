@@ -9,6 +9,8 @@ namespace TedShop.Data.Repositories
 {
     public interface IPostRepository : IRepository<Post>
     {
+        //IEnumerable<Post> GetAllByTag(string tag, int pageIndex, int pageSize, out int totalRow);
+
         IEnumerable<Post> GetAllByTag(string tag, int pageIndex, int pageSize, out int totalRow);
     }
 
@@ -18,11 +20,12 @@ namespace TedShop.Data.Repositories
         {
         }
 
+
         public IEnumerable<Post> GetAllByTag(string tag, int pageIndex, int pageSize, out int totalRow)
         {
             var query = from p in DbContext.Posts
                         join pt in DbContext.PostTags
-on p.ID equals pt.PostID
+                         on p.ID equals pt.PostID
                         where pt.TagID == tag && p.Status
                         orderby p.CreateDate descending
                         select p;
