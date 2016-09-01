@@ -41,7 +41,7 @@ namespace TedShop.Data
         public DbSet<SupportOnline> SupportOnlines { set; get; }
 
         public DbSet<PostCategory> PostCategorys { set; get; }
-
+        public DbSet<Error> Errors { set; get; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
           
