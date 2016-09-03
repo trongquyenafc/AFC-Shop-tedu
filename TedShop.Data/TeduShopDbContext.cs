@@ -1,14 +1,18 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
 using TeduShop.Model.Models;
+
+
 namespace TedShop.Data
 {
-   public  class TeduShopDbContext:DbContext
+   public  class TeduShopDbContext: IdentityDbContext<ApplicationUser>
     {
+        private object builder;
 
         public TeduShopDbContext():base("TeduShopConnection")
         {
@@ -42,9 +46,18 @@ namespace TedShop.Data
 
         public DbSet<PostCategory> PostCategorys { set; get; }
         public DbSet<Error> Errors { set; get; }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+
+        public static TeduShopDbContext Create()
         {
-          
+            return new TeduShopDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder builder)
+        {
+
+
+            builder.Entity<IdentityUserRole>().HasKey(i => new {i.UserId, i.RoleId });
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
         }
 
     }
