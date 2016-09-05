@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TeduShop.Web.Models
 {
-    public class PostCategoryViewModel
+    public class ProductCategoryViewModel
     {
         public int ID { set; get; }
         public string Name { set; get; }

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
 namespace TeduShop.Web.Models
 {
-    public class PostViewModel
+    public class ProductViewModel
     {
         public int ID { set; get; }
 
@@ -14,6 +16,14 @@ namespace TeduShop.Web.Models
         public int CategoryID { set; get; }
 
         public string Image { set; get; }
+
+        public string MoreImages { set; get; }
+
+        public decimal Price { set; get; }
+
+        public decimal? PromotionPrice { set; get; }
+
+        public int? Warranty { set; get; }
 
         public string Description { set; get; }
 
@@ -39,8 +49,6 @@ namespace TeduShop.Web.Models
 
         public bool Status { set; get; }
 
-        public virtual PostCategoryViewModel PostCategory { set; get; }
-
-        public virtual IEnumerable<PostTagViewModel> PostTags { set; get; }
+        public virtual ProductCategoryViewModel ProductCategory { set; get; }
     }
 }

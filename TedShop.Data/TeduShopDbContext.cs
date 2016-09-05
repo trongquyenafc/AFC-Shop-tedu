@@ -12,7 +12,7 @@ namespace TedShop.Data
 {
    public  class TeduShopDbContext: IdentityDbContext<ApplicationUser>
     {
-        private object builder;
+      
 
         public TeduShopDbContext():base("TeduShopConnection")
         {
