@@ -20,11 +20,11 @@ namespace TeduShop.Web.Infrastructure.Extensions
             postCategory.Image = postCategoryVm.Image;
             postCategory.HomeFlag = postCategoryVm.HomeFlag;
 
-            postCategory.CreateDate = postCategoryVm.CreatedDate;
-            postCategory.CreateBy = postCategoryVm.CreatedBy;
-            postCategory.UpdateDate = postCategoryVm.UpdatedDate;
-            postCategory.UpdateBy = postCategoryVm.UpdatedBy;
-            postCategory.Metakeyword = postCategoryVm.MetaKeyword;
+            postCategory.CreateDate = postCategoryVm.CreateDate;
+            postCategory.CreateBy = postCategoryVm.CreateBy;
+            postCategory.UpdateDate = postCategoryVm.UpdateDate;
+            postCategory.UpdateBy = postCategoryVm.UpdateBy;
+            postCategory.Metakeyword = postCategoryVm.Metakeyword;
             postCategory.MetaDescription = postCategoryVm.MetaDescription;
             postCategory.Status = postCategoryVm.Status;
         }
@@ -43,11 +43,11 @@ namespace TeduShop.Web.Infrastructure.Extensions
             post.HomeFlag = postVm.HomeFlag;
             post.ViewCount = postVm.ViewCount;
 
-            post.CreateDate = postVm.CreatedDate;
-            post.CreateBy = postVm.CreatedBy;
-            post.UpdateDate = postVm.UpdatedDate;
-            post.UpdateBy = postVm.UpdatedBy;
-            post.Metakeyword = postVm.MetaKeyword;
+            post.CreateDate = postVm.CreateDate;
+            post.CreateBy = postVm.CreateBy;
+            post.UpdateDate = postVm.UpdateDate;
+            post.UpdateBy = postVm.UpdateBy;
+            post.Metakeyword = postVm.Metakeyword;
             post.MetaDescription = postVm.MetaDescription;
             post.Status = postVm.Status;
         }

@@ -35,17 +35,21 @@ namespace TeduShop.Web.Models
 
         public int? ViewCount { set; get; }
 
-        public DateTime? CreatedDate { set; get; }
+        public string CreateBy { set; get; }
 
-        public string CreatedBy { set; get; }
+        public DateTime? CreateDate { set; get; }
 
-        public DateTime? UpdatedDate { set; get; }
+        public string UpdateBy { set; get; }
 
-        public string UpdatedBy { set; get; }
 
-        public string MetaKeyword { set; get; }
+        public DateTime? UpdateDate { set; get; }
+
+
 
         public string MetaDescription { set; get; }
+
+        public string Metakeyword { set; get; }
+
 
         public bool Status { set; get; }
 
