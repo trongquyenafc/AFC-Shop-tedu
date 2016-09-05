@@ -27,6 +27,16 @@
             </div>
         </div>
         <div class="box-body">
+            <di class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="keyword" placeholder="Từ khóa">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="search()">Tìm kiếm</button>
+                        </span>
+                    </div><!-- /input-group -->
+                </div>
+            </di>
            <div class="row">
                <div class="col-md-12">
                    <div class="box">
@@ -56,6 +66,11 @@
                                </tr>
                         
                            </tbody>
+                           <tfoot>
+                               <tr>
+                                   <td colspan="5">Tổng số bản ghi: {{totalCount}}</td>
+                               </tr>
+                           </tfoot>
                        </table>
                    </div>
                </div>
