@@ -29,7 +29,26 @@ namespace TeduShop.Web.Infrastructure.Extensions
             postCategory.Status = postCategoryVm.Status;
         }
 
+        public static void UpdateProductCategory(this ProductCategory productCategory, ProductCategoryViewModel productCategoryVm)
+        {
+            productCategory.ID = productCategoryVm.ID;
+            productCategory.Name = productCategoryVm.Name;
+            productCategory.Description = productCategoryVm.Description;
+            productCategory.Alias = productCategoryVm.Alias;
+            productCategory.ParentID = productCategoryVm.ParentID;
+            productCategory.DisplayOrder = productCategoryVm.DisplayOrder;
+            productCategory.Images = productCategoryVm.Image;
+            productCategory.HomeFlag = productCategoryVm.HomeFlag;
 
+            productCategory.CreateDate = productCategoryVm.CreateDate;
+            productCategory.CreateBy = productCategoryVm.CreateBy;
+            productCategory.UpdateDate = productCategoryVm.UpdateDate;
+            productCategory.UpdateBy = productCategoryVm.UpdateBy;
+            productCategory.Metakeyword = productCategoryVm.Metakeyword;
+            productCategory.MetaDescription = productCategoryVm.MetaDescription;
+            productCategory.Status = productCategoryVm.Status;
+
+        }
 
         public static void UpdatePost(this Post post, PostViewModel postVm)
         {
@@ -51,6 +70,35 @@ namespace TeduShop.Web.Infrastructure.Extensions
             post.MetaDescription = postVm.MetaDescription;
             post.Status = postVm.Status;
         }
+
+
+        public static void UpdateProduct(this Product product, ProductViewModel productVm)
+        {
+            product.ID = productVm.ID;
+            product.Name = productVm.Name;
+            product.Description = productVm.Description;
+            product.Alias = productVm.Alias;
+            product.CategoryID = productVm.CategoryID;
+            product.Content = productVm.Content;
+            product.Images = productVm.Images;
+            product.Moreimages = productVm.MoreImages;
+            product.Price = productVm.Price;
+            product.PromotionPrice = productVm.PromotionPrice;
+            product.Waranty = productVm.Waranty;
+            product.HomeFlag = productVm.HomeFlag;
+            product.ViewCount = productVm.ViewCount;
+
+            product.CreateDate = productVm.CreateDate;
+            product.CreateBy = productVm.CreateBy;
+            product.UpdateDate = productVm.UpdateDate;
+            product.UpdateBy = productVm.UpdateBy;
+            product.Metakeyword = productVm.Metakeyword;
+            product.MetaDescription = productVm.MetaDescription;
+            product.Tags = productVm.Tags;
+            product.Status = productVm.Status;
+        }
+
+
 
     }
 }

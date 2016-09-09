@@ -10,6 +10,7 @@ namespace TeduShop.Web.Api
 {
 
     [RoutePrefix("api/account")]
+    [Authorize]
     public class AccountController : ApiController
     {
         private ApplicationSignInManager _signInManager;
