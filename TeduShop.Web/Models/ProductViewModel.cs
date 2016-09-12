@@ -43,7 +43,7 @@ namespace TeduShop.Web.Models
 
 
         public DateTime? UpdateDate { set; get; }
-
+        public int Quantity { set; get; }
 
 
         public string MetaDescription { set; get; }

@@ -86,8 +86,9 @@ namespace TeduShop.Web.Infrastructure.Extensions
             product.PromotionPrice = productVm.PromotionPrice;
             product.Waranty = productVm.Waranty;
             product.HomeFlag = productVm.HomeFlag;
+            product.HotFlag = productVm.HotFlag;
             product.ViewCount = productVm.ViewCount;
-
+            product.Quantity = productVm.Quantity;
             product.CreateDate = productVm.CreateDate;
             product.CreateBy = productVm.CreateBy;
             product.UpdateDate = productVm.UpdateDate;
@@ -97,6 +98,9 @@ namespace TeduShop.Web.Infrastructure.Extensions
             product.Tags = productVm.Tags;
             product.Status = productVm.Status;
         }
+
+
+     
 
 
 

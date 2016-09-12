@@ -1,7 +1,7 @@
 ﻿using TedShop.Data.Infrastructure;
 using TeduShop.Model.Models;
 
-namespace TeduShop.Data.Repositories
+namespace TedShop.Data.Repositories
 {
     public interface ISlideRepository : IRepository<Slide>
     {
