@@ -53,7 +53,7 @@ namespace TeduShop.Web.Controllers
 
             return PartialView(footerViewModel);
         }
-
+    
         [ChildActionOnly]
         public ActionResult Header()
         {
