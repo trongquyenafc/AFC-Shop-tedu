@@ -9,6 +9,9 @@
     using System.Linq;
     using TeduShop.Model.Models;
     using TeduShop.Common;
+    using System.Data.Entity.Validation;
+    using System.Diagnostics;
+
     internal sealed class Configuration : DbMigrationsConfiguration<TedShop.Data.TeduShopDbContext>
     {
         public Configuration()
@@ -19,8 +22,8 @@
         protected override void Seed(TedShop.Data.TeduShopDbContext context)
         {
             // CreateProductCategorySample(context);
-            CreateSlide(context);
-
+            //  CreateSlide(context);
+            CreatePage(context);
         }
 
 
@@ -149,6 +152,36 @@
             //    context.SaveChanges();
             //}
         }
+        private void CreatePage(TeduShopDbContext context)
+        {
+            if (context.Pages.Count() == 0)
+            {
+                try
+                {
+                    var page = new Page()
+                    {
+                        Name = "Giới thiệu",
+                        Alias = "gioi-thieu",
+                        Content = @"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
+                        Status = true
 
+                    };
+                    context.Pages.Add(page);
+                    context.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var eve in ex.EntityValidationErrors)
+                    {
+                        Trace.WriteLine($"Entity of type \"{eve.Entry.Entity.GetType().Name}\" in state \"{eve.Entry.State}\" has the following validation error.");
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            Trace.WriteLine($"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\"");
+                        }
+                    }
+                }
+
+            }
+        }
     }
 }

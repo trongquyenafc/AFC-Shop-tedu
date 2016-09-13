@@ -84,6 +84,10 @@
     <Compile Include="Migrations\201609120254502_Addmorequantity.Designer.cs">
       <DependentUpon>201609120254502_Addmorequantity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609122154264_addforeign.cs" />
+    <Compile Include="Migrations\201609122154264_addforeign.Designer.cs">
+      <DependentUpon>201609122154264_addforeign.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
@@ -142,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609120254502_Addmorequantity.resx">
       <DependentUpon>201609120254502_Addmorequantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609122154264_addforeign.resx">
+      <DependentUpon>201609122154264_addforeign.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

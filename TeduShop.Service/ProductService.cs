@@ -35,6 +35,9 @@ namespace TeduShop.Service
         IEnumerable<Tag> GetListTagByProductId(int id);
         void IncreaseView(int id);
         IEnumerable<Product> GetListProductByTag(string tagId, int page, int pagesize, out int totalRow);
+
+        Tag GetTag(string tagId);
+
         void Save();
     }
 
@@ -245,11 +248,13 @@ namespace TeduShop.Service
 
         public IEnumerable<Product> GetListProductByTag(string tagId, int page, int pagesize, out int totalRow)
         {
-            var model = _productRepository.GetMulti(x => x.Status && x.ProductTags.Count(y => y.ProductID == x.ID) > 0, new string[] { "ProductCategory", "ProductTag" });
+            var model = _productRepository.GetListProductByTag(tagId, page, pagesize, out totalRow);
+            return model;
+        }
 
-            totalRow = model.Count();
-
-            return model.OrderByDescending(x => x.CreateDate).Skip((page - 1) * pagesize).Take(pagesize);
+        public Tag GetTag(string tagId)
+        {
+            return _tagRepository.GetSingleByCondition(x => x.ID == tagId);
         }
     }
 }
