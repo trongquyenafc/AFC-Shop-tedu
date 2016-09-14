@@ -11,6 +11,17 @@ namespace TeduShop.Web
             //xay dung routes tinh truoc, tham so sau,  va mat dinh cuoi cung
 
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            // BotDetect requests must not be routed
+            routes.IgnoreRoute("{*botdetect}", new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
+
+
+            routes.MapRoute(
+           name: "Contact",
+           url: "lien-he.html",
+           defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional },
+           namespaces: new string[] { "TeduShop.Web.Controllers" }
+          );
+
             routes.MapRoute(
            name: "Login",
           url: "dang-nhap.html",
