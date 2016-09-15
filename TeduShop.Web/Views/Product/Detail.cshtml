@@ -5,9 +5,11 @@
     Layout = "~/Views/Shared/Layouts.cshtml";
 }
 <link href="~/Assets/client/css/etalage.css" rel="stylesheet" />
+
 @section footerJS{
     <script type="text/javascript" src="/Assets/client/js/jquery.flexisel.js"></script>
     <script src="/Assets/client/js/jquery.etalage.min.js"></script>
+<script src="~/Assets/client/js/shoppingCart.js"></script>
     <script>
     jQuery(document).ready(function ($) {
       $("#flexiselDemo1").flexisel({
@@ -84,7 +86,7 @@
             <h4>@Model.Name</h4>
             <div class="cart-b">
                 <div class="left-n ">@(Model.Price == 0 ? "Liên hệ" : Model.Price.ToString("N0"))</div>
-                <a class="now-get get-cart-in" href="/them-gio-hang/@Model.ID">Thêm vào giỏ hàng</a>
+                <a class="now-get get-cart-in btnAddToCart" href="#" data-id="@Model.ID">Thêm vào giỏ hàng</a>
                 <div class="clearfix"></div>
             </div>
             <h6>@Model.Quantity sản phẩm trong kho</h6>

@@ -45,7 +45,7 @@ namespace TeduShop.Web.Controllers
         }
 
         [ChildActionOnly] /*chi de nhung khong goi su dung khi cac phan it su dung hoac luong truy cap nhieu vi du 3600 het khoang thoi gian dok no lay du lieu*/
-       [OutputCache(Duration =3600)]
+        [OutputCache(Duration =36000)]
         public ActionResult Footer()
         {
             var footerModel = _commonService.GetFooter();
@@ -61,7 +61,7 @@ namespace TeduShop.Web.Controllers
         }
 
         [ChildActionOnly]
-        [OutputCache(Duration =3600)]
+        [OutputCache(Duration = 36000)]
         public ActionResult Category()
         {
             var model = _productCategoryService.GetAll();

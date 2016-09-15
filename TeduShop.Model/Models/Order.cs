@@ -41,6 +41,12 @@ namespace TeduShop.Model.Models
         public string PaymentStatus { set; get; }//khac kieu chuoi neu cho phe null thi ? vi du int?,kieu chuoi khong required thi cho phep null
         public bool Status { set; get; }
 
+        [StringLength(128)]
+        [Column(TypeName = "nvarchar")]
+        public string CustomerId { set; get; }
+
+        [ForeignKey("CustomerId")]
+        public virtual ApplicationUser User { set; get; }
         public virtual IEnumerable<OrderDetail> OrderDetails { set; get; }
     }
 }
