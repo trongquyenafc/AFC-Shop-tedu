@@ -16,7 +16,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;//sua lai true la de khoi tao migration 
         }
 
         protected override void Seed(TedShop.Data.TeduShopDbContext context)

@@ -13,6 +13,12 @@ namespace TeduShop.Service
     public interface IOrderService
     {
         bool Create(Order order, List<OrderDetail> orderDetails);
+        void Update(Order order);
+
+        IEnumerable<Order> GetAll(string keyword);
+        Order GetById(int id);
+        Order Delete(int id);
+        void Save();
     }
     public class OrderService : IOrderService
     {
@@ -44,6 +50,39 @@ namespace TeduShop.Service
             {
                 throw;
             }
+        }
+
+        public void Update(Order order)
+        {
+            _orderRepository.Update(order);
+        }
+
+        public IEnumerable<Order> GetAll(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                return _orderRepository.GetMulti(x => x.CustomerName.Contains(keyword) || x.CustomerMobile.Contains(keyword) || x.CustomerEmail.Contains(keyword));
+
+            }
+            else
+            {
+                return _orderRepository.GetAll();
+            }
+        }
+
+        public Order GetById(int id)
+        {
+            return _orderRepository.GetSingleById(id);
+        }
+
+        public Order Delete(int id)
+        {
+            return _orderRepository.Delete(id);
+        }
+
+        public void Save()
+        {
+            _unitOfWork.Commit();
         }
     }
 }

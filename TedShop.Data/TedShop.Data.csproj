@@ -100,12 +100,24 @@
     <Compile Include="Migrations\201609150711158_addcustomerid.Designer.cs">
       <DependentUpon>201609150711158_addcustomerid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609151422090_RenametableIdentity.cs" />
+    <Compile Include="Migrations\201609151422090_RenametableIdentity.Designer.cs">
+      <DependentUpon>201609151422090_RenametableIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609151510266_Addgroupuser.cs" />
+    <Compile Include="Migrations\201609151510266_Addgroupuser.Designer.cs">
+      <DependentUpon>201609151510266_Addgroupuser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IDbFactory.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Repositories\ApplicationGroupRepository.cs" />
+    <Compile Include="Repositories\ApplicationRoleGroupRepository.cs" />
+    <Compile Include="Repositories\ApplicationRoleRepository.cs" />
+    <Compile Include="Repositories\ApplicationUserGroupRepository.cs" />
     <Compile Include="Repositories\ContactDetailRepository.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
     <Compile Include="Repositories\FeedbackRepository.cs" />
@@ -172,6 +184,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609150711158_addcustomerid.resx">
       <DependentUpon>201609150711158_addcustomerid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609151422090_RenametableIdentity.resx">
+      <DependentUpon>201609151422090_RenametableIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609151510266_Addgroupuser.resx">
+      <DependentUpon>201609151510266_Addgroupuser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

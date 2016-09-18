@@ -1,8 +1,4 @@
-﻿/// <reference path="/Assets/admin/libs/angular/angular.js" />
-
-
-(function (app) {
-
+﻿(function (app) {
     app.factory('notificationService', notificationService);
 
     function notificationService() {
@@ -21,20 +17,19 @@
         }
 
         function displayError(error) {
-            if(Array.isArray(error)){
+            if (Array.isArray(error)) {
                 error.each(function (err) {
                     toastr.error(err);
                 });
             }
             else {
-                toastr.error(err);
+                toastr.error(error);
             }
         }
 
         function displayWarning(message) {
             toastr.warning(message);
         }
-
         function displayInfo(message) {
             toastr.info(message);
         }
@@ -46,6 +41,4 @@
             displayInfo: displayInfo
         }
     }
-
-
 })(angular.module('tedushop.common'));
