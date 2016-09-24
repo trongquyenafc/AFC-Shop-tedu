@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using TeduShop.Model.Models;
 using TedShop.Data.Repositories;
 using TedShop.Data.Infrastructure;
-
+using TeduShop.Common.ViewModels;
 namespace TeduShop.Service
 {
 
     public interface IOrderService
     {
         bool Create(Order order, List<OrderDetail> orderDetails);
+
         void Update(Order order);
 
         IEnumerable<Order> GetAll(string keyword);
@@ -84,5 +85,7 @@ namespace TeduShop.Service
         {
             _unitOfWork.Commit();
         }
+
+   
     }
 }

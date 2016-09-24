@@ -14,7 +14,6 @@ namespace TeduShop.Web.App_Start
 
 
 
-
     public class ApplicationUserStore : UserStore<ApplicationUser>
     {
         public ApplicationUserStore(TeduShopDbContext context)
